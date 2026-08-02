@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">DollarTreeApp1</string>
+  <string name="app_text">Hello, Android!</string>
+  <string name="app_work">You "don't" work :^)</string>
+  <string name="no_work_yet">"haven't" work yet :^)</string>
+  <string name="no_work">"weren't" schedule :^)</string>
+</resources>
+

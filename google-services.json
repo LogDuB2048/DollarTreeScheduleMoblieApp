@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "857190113182",
+    "project_id": "dollartreeapp1",
+    "storage_bucket": "dollartreeapp1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857190113182:android:ba7b343f5e645be95fc08f",
+        "android_client_info": {
+          "package_name": "com.companyname.DollarTreeApp1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArGpILluvfWRbi2RhROg89I7tWIwL0F8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857190113182:android:728a92c6785093ed5fc08f",
+        "android_client_info": {
+          "package_name": "com.companyname.DollarTreeApp2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArGpILluvfWRbi2RhROg89I7tWIwL0F8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

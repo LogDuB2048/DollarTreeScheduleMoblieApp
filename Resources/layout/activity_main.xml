@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8EA4ED"
+    android:stretchColumns="2">
+
+  <TableRow
+    android:paddingTop="500px">
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay0"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob0"
+        />
+    <TextView
+        android:text="6-11"
+        android:padding="3dip"
+        android:gravity="end"
+        style="@style/FontColor"
+        android:layout_column="2"
+        android:id="@+id/textViewHours0"
+        />
+  </TableRow>
+
+  <View
+      android:layout_height="2dip"
+      android:background="#FF909090" />
+
+  <TableRow>
+
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay1"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob1"
+        />
+    <TextView
+        android:text="6-11"
+        android:gravity="end"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:layout_column="2"
+        android:id="@+id/textViewHours1"
+        />
+  </TableRow>
+
+  <View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
+
+  <TableRow>
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay2"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob2"
+        />
+    <TextView
+        android:text="6-11"
+        android:layout_column="2"
+        android:gravity="end"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewHours2"
+        />
+  </TableRow>
+  <View
+      android:layout_height="2dip"
+      android:background="#FF909090" />
+
+  <TableRow>
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay3"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob3"
+        />
+    <TextView
+        android:text="6-11"
+        android:gravity="end"
+        android:layout_column="2"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewHours3"
+        />
+  </TableRow>
+  <View
+      android:layout_height="2dip"
+      android:background="#FF909090" />
+
+  <TableRow>
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay4"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob4"
+        />
+    <TextView
+        android:text="6-11"
+        android:layout_column="2"
+        android:gravity="end"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewHours4"
+        />
+  </TableRow>
+  <View
+      android:layout_height="2dip"
+      android:background="#FF909090" />
+
+  <TableRow>
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay5"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob5"
+        />
+    <TextView
+        android:text="6-11"
+        android:layout_column="2"
+        android:gravity="end"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewHours5"
+        />
+  </TableRow>
+  <View
+      android:layout_height="2dip"
+      android:background="#FF909090" />
+
+  <TableRow>
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay6"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob6"
+        />
+    <TextView
+        android:text="6-11"
+        android:gravity="end"
+        android:layout_column="2"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewHours6"
+        />
+  </TableRow>
+  <View
+      android:layout_height="2dip"
+      android:background="#FF909090" />
+
+  <TableRow>
+    <TextView
+        android:text="day1"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewDay7"
+        />
+    <TextView
+        android:padding="3dip"
+        style="@style/MiddleRow"
+        android:id="@+id/textViewJob7"
+        />
+    <TextView
+        android:text="6-11"
+        android:gravity="end"
+        android:layout_column="2"
+        android:padding="3dip"
+        style="@style/FontColor"
+        android:id="@+id/textViewHours7"
+        />
+  </TableRow>
+  <TableRow>
+
+    <Button
+    android:text="Last Week"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/button3" />
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Current week"
+      android:id="@+id/button1"
+      />
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Next Week"
+      android:id="@+id/button2"
+      />
+  </TableRow>
+  <TableRow>
+    <CheckBox
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text=" For real ong"
+      android:id= "@+id/CheckBox0"
+    />
+    <TextView
+        android:minWidth="30px"
+        android:minHeight="30px"
+        xmlns="http://schemas.android.com/apk/res/android"
+        android:id="@+id/textView1" />
+    <TextView
+        android:minWidth="30px"
+        android:minHeight="30px"
+        xmlns="http://schemas.android.com/apk/res/android"
+        android:id="@+id/textView2" />
+
+  </TableRow>
+</TableLayout>
