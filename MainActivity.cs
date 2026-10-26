@@ -62,6 +62,23 @@ namespace DollarTreeApp2
                 _ = LastWeek();
             };
             CheckBox bx1 = FindViewById<CheckBox>(Resource.Id.CheckBox0);
+
+            TextView day0 = FindViewById<TextView>(Resource.Id.textViewDay0);
+            TextView day1 = FindViewById<TextView>(Resource.Id.textViewDay1);
+            TextView day2 = FindViewById<TextView>(Resource.Id.textViewDay2);
+            TextView day3 = FindViewById<TextView>(Resource.Id.textViewDay3);
+            TextView day4 = FindViewById<TextView>(Resource.Id.textViewDay4);
+            TextView day5 = FindViewById<TextView>(Resource.Id.textViewDay5);
+            TextView day6 = FindViewById<TextView>(Resource.Id.textViewDay6);
+
+            day0.Click += onDayClick;
+            day1.Click += onDayClick;
+            day2.Click += onDayClick;
+            day3.Click += onDayClick;
+            day4.Click += onDayClick;
+            day5.Click += onDayClick;
+            day6.Click += onDayClick;
+
             bx1.CheckedChange += async (sender, e) =>
             {
                 fr = !fr;
@@ -85,6 +102,24 @@ namespace DollarTreeApp2
             Test();
         }
         
+        private void onDayClick(object sender, EventArgs e)
+        {
+            var clickedDay = sender as TextView;
+            if (clickedDay != null)
+            {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.SetTitle(clickedDay.Text);
+                builder.SetMessage(clickedDay.Tag.ToString());
+
+                builder.SetNegativeButton("close", (dialog, _) =>
+                {
+                    //blank ?
+                });
+                AlertDialog alert = builder.Create();
+                alert.Show();
+            }
+        }
+
         private async void Test()
         {
             FirebaseApp.InitializeApp(this);
@@ -109,7 +144,7 @@ namespace DollarTreeApp2
             }
             catch(Exception e)
             {
-                Console.WriteLine(e + " | what the fuck ");
+                Console.WriteLine(e);
                //just have to reload not sure i can code anything in just have the user open twice
             }
             
@@ -127,7 +162,6 @@ namespace DollarTreeApp2
                 {
                     writer.WriteLine(idkAnymore.ToString());
                 }
-                Console.WriteLine(idkAnymore + " wepaons?");
             }
         }
         
@@ -141,8 +175,9 @@ namespace DollarTreeApp2
             var url = "https://compassmobile.dollartree.com/pwm/action/employeeLogin";
             var loginInfo = new Dictionary<string, string>
                 {
-                    { "username", "50037428" },
-                    { "password", "5603"}
+                //change
+                    { "username", "" },
+                    { "password", ""}
                 };
             cookieContainer = new CookieContainer();
             shardHandler = new HttpClientHandler { AllowAutoRedirect = true, UseCookies = true, CookieContainer = cookieContainer };
@@ -259,7 +294,9 @@ namespace DollarTreeApp2
             var dumdHours = "valign=\"top\">";
             int offset;
             var replaceString = "&nbsp;";
-
+            string location;
+            string comment;
+            
             offset = 4;
             startingPosHours = responseString.IndexOf("Sched:", 0);
             endingPosHours = responseString.IndexOf("</td>", startingPosHours);
@@ -342,10 +379,17 @@ namespace DollarTreeApp2
             var startingACTIVITY = responseString.IndexOf("Activity:", 0);
             var endingActivityPos = responseString.IndexOf("</td>", startingACTIVITY);
 
+            var startingLocation = responseString.IndexOf("Location:", 0);
+            var endingLocation = responseString.IndexOf("</td>", startingLocation);
+
+            var startingComment = responseString.IndexOf("Comments:", 0);
+            var endingComment = responseString.IndexOf("</td>", startingComment);
+
             dumddumd = "<br>";
 
             for (int i = 0; i < 7; i++)
             {
+                //this block gets position
                 string textViewJob = "textViewJob" + i.ToString();
                 startingACTIVITY = responseString.IndexOf("<td", endingActivityPos);
                 if (startingACTIVITY > 0)
@@ -367,7 +411,7 @@ namespace DollarTreeApp2
                     else
                         textViewerCurrent.Text = "(" + returnString[0] + ")";
                 }
-
+                //this gets hours
                 string textViewNum = "textViewHours" + i.ToString();
                 startingPos = responseString.IndexOf("<td", endingPos);
                 if (startingPos > 0)
@@ -420,13 +464,62 @@ namespace DollarTreeApp2
                             textViewerCurrent.Text = returnString + textViewerCurrent.Text;
                     }
                 }
+
+                string textViewDay = "textViewDay" + i.ToString();
+                int newtempLower = Resources.GetIdentifier(textViewDay, "id", this.PackageName);
+                var newtextViewerCurrent = (TextView)FindViewById(newtempLower);
+                newtextViewerCurrent.Tag = "";
+                //this block gets location
+                startingLocation = responseString.IndexOf("<td", endingLocation);
+                if (startingLocation > 0)
+                    endingLocation = responseString.IndexOf("</td>", startingLocation);
+                if (endingLocation>0 && startingLocation >0)
+                {
+                    returnString = responseString.Substring(startingLocation + 18, (endingLocation - startingLocation) - 18);
+                    if (returnString.Contains(dumddumd))
+                    {
+                        returnString = returnString.Substring(0,returnString.IndexOf(dumddumd));
+                    }
+                    returnString = returnString.Trim();
+                    int tempLower = Resources.GetIdentifier(textViewDay, "id", this.PackageName);
+                    var textViewerCurrent = (TextView)FindViewById(tempLower);
+                    if (returnString.Contains(replaceString))
+                        textViewerCurrent.Tag = "";
+                    else
+                        textViewerCurrent.Tag = textViewerCurrent.Tag+ " "+returnString;
+                }
+                
+                //this blcok gets comments
+                startingComment = responseString.IndexOf("<td", endingComment);
+                if (startingComment > 0)
+                    endingComment = responseString.IndexOf("</td>", startingComment);
+                if (endingComment > 0 && startingComment>0)
+                {
+                    returnString= responseString.Substring(startingComment+18,(endingComment - startingComment) -18);
+                    returnString = returnString.Trim();
+                    string test = "<BR>";
+                    // dumddumd = "<br>";
+                    if (returnString.Contains(test))
+                    {
+                        returnString = returnString.Substring(0, returnString.IndexOf(test));
+                    }
+                    returnString = returnString.Trim();
+                    int tempLower = Resources.GetIdentifier(textViewDay, "id", this.PackageName);
+                    var textViewerCurrent = (TextView)FindViewById(tempLower);
+
+                    if (returnString.Contains(replaceString))
+                        textViewerCurrent.Tag = textViewerCurrent.Tag + "";
+                    else
+                        textViewerCurrent.Tag = textViewerCurrent.Tag + "\n"+returnString;
+                }
+                
             }
         }
         //the input format will be 0:00
         // take hours and times in by 15.25, take min divide by 60 and times by 15.25
         private string calucateMoney(string hoursInput)
         {
-            double pay = 15.25;
+            double pay = 15.50;
 
             int hours = int.Parse(hoursInput.Substring(0, hoursInput.IndexOf(":")));
             int tempMin = 0;

@@ -10,6 +10,8 @@
     <TextView
         android:text="day1"
         android:padding="3dip"
+        android:clickable="true"
+        android:tag=""
         style="@style/FontColor"
         android:id="@+id/textViewDay0"
         />
@@ -38,6 +40,7 @@
         android:text="day1"
         android:padding="3dip"
         style="@style/FontColor"
+        android:tag=""
         android:id="@+id/textViewDay1"
         />
     <TextView
@@ -64,6 +67,8 @@
         android:text="day1"
         android:padding="3dip"
         style="@style/FontColor"
+        android:clickable="true"
+        android:tag=""
         android:id="@+id/textViewDay2"
         />
     <TextView
@@ -89,6 +94,7 @@
         android:text="day1"
         android:padding="3dip"
         style="@style/FontColor"
+        android:tag=""
         android:id="@+id/textViewDay3"
         />
     <TextView
@@ -114,6 +120,7 @@
         android:text="day1"
         android:padding="3dip"
         style="@style/FontColor"
+        android:tag=""
         android:id="@+id/textViewDay4"
         />
     <TextView
@@ -139,6 +146,7 @@
         android:text="day1"
         android:padding="3dip"
         style="@style/FontColor"
+        android:tag=""
         android:id="@+id/textViewDay5"
         />
     <TextView
@@ -164,6 +172,7 @@
         android:text="day1"
         android:padding="3dip"
         style="@style/FontColor"
+        android:tag=""
         android:id="@+id/textViewDay6"
         />
     <TextView
@@ -189,6 +198,7 @@
         android:text="day1"
         android:padding="3dip"
         style="@style/FontColor"
+        android:tag=""
         android:id="@+id/textViewDay7"
         />
     <TextView
